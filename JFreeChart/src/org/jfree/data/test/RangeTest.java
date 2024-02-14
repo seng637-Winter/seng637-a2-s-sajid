@@ -9,7 +9,6 @@ public class RangeTest {
     private Range r1;
     private Range r2;
     private Range r3;
-    private Range r4;
     
     @BeforeClass public static void setUpBeforeClass() throws Exception {
     }
@@ -19,7 +18,6 @@ public class RangeTest {
     	r1 = new Range(-1, 1);
     	r2 = new Range(-2, 2);
     	r3 = new Range(-1, 1);
-    	r4 = r3;
     }
     
     @Test
@@ -44,6 +42,7 @@ public class RangeTest {
     
     @Test
     public void testEqualsTransitive() {
+    	Range r4 = r3;
     	assertTrue(r1.equals(r3) && r3.equals(r4) && r1.equals(r4));
     }
 
