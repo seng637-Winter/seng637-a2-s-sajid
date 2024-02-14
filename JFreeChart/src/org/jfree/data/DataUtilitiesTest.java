@@ -1,33 +1,51 @@
 package org.jfree.data;
 
 import static org.junit.Assert.*;
-import org.jmock.Mockery;
-import org.jmock.Expectations;
-import org.junit.Test;
+import org.jmock.*;
+import org.junit.*;
 
 public class DataUtilitiesTest {
+	private Mockery mockingContext;
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+		this.mockingContext = new Mockery();
+	}
 
     @Test
-    public void calculateColumnTotalForTwoValues() {
-        // setup
-        Mockery mockingContext = new Mockery();
-        final Values2D values = mockingContext.mock(Values2D.class);
-
-        mockingContext.checking(new Expectations() {{
-            oneOf(values).getRowCount();
-            will(returnValue(2));
-            oneOf(values).getValue(0, 0);
-            will(returnValue(7.5));
-            oneOf(values).getValue(1, 0);
-            will(returnValue(2.5));
-        }});
-
-        // exercise
-        double result = DataUtilities.calculateColumnTotal(values, 0);
-
-        // verify
-        assertEquals(10.0, result, .000000001d);
-
-        // tear-down: NONE in this test method
+    public void testCreateNumberArrayWithValidData() {
+        final double[] values = {1.0, 2.3, 9.9};
+        Number[] result = DataUtilities.createNumberArray(values);
+        
+        assertEquals(values.length, result.length);
+        for (int i = 0; i < result.length; i++) {
+        	assertEquals(values[i], result[i]);
+        }
+    }
+ 
+    @Test
+    public void testCreateNumberArrayWithNegativeValues() {
+        final double[] values = {-1.0, -2.3, -9.9, -1.3};
+        Number[] result = DataUtilities.createNumberArray(values);
+      
+        assertEquals(values.length, result.length);
+        for (int i = 0; i < values.length; i++) {
+            assertEquals(values[i], result[i]);
+        }
+    }
+    
+    @Test
+    public void testCreateNumberArrayWithZeroValues() {
+        final double[] values = {0.0, 0.0, 0.0};
+        Number[] result = DataUtilities.createNumberArray(values);
+        
+        assertEquals(values.length, result.length);
+        for (int i = 0; i < values.length; i++) {
+            assertEquals(values[i], result[i]);
+        }
     }
 }
