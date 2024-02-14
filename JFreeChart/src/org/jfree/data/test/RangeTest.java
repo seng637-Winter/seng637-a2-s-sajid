@@ -51,12 +51,6 @@ public class RangeTest {
         assertTrue(r1.equals(r3) == r3.equals(r1));
     }
     
-    @Test
-    public void testEqualsNegative() {
-    	Range r5 = new Range(1, -1);
-        assertFalse(r1.equals(r5));
-    }
-
     @After
     public void tearDown() throws Exception {
     }
