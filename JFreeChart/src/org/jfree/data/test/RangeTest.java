@@ -51,13 +51,11 @@ public class RangeTest {
         assertTrue(exampleRange1.equals(exampleRange4));
     }
 
-    
     @Test
     public void testEqualsConsistency() {
         assertFalse(exampleRange1.equals(null));
     }
 
-    
     @After
     public void tearDown() throws Exception {
     }
