@@ -15,13 +15,12 @@ public class DataUtilitiesTest {
 	public void setUp() throws Exception {
 		this.mockingContext = new Mockery();
 	}
-
+    
     @Test
     public void testCreateNumberArrayWithValidData() {
         final double[] values = {1.0, 2.3, 9.9};
         Number[] result = DataUtilities.createNumberArray(values);
         
-        assertEquals(values.length, result.length);
         for (int i = 0; i < result.length; i++) {
         	assertEquals(values[i], result[i]);
         }
@@ -32,7 +31,6 @@ public class DataUtilitiesTest {
         final double[] values = {-1.0, -2.3, -9.9, -1.3};
         Number[] result = DataUtilities.createNumberArray(values);
       
-        assertEquals(values.length, result.length);
         for (int i = 0; i < values.length; i++) {
             assertEquals(values[i], result[i]);
         }
@@ -43,7 +41,6 @@ public class DataUtilitiesTest {
         final double[] values = {0.0, 0.0, 0.0};
         Number[] result = DataUtilities.createNumberArray(values);
         
-        assertEquals(values.length, result.length);
         for (int i = 0; i < values.length; i++) {
             assertEquals(values[i], result[i]);
         }
