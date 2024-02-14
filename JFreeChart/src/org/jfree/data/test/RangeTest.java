@@ -54,6 +54,12 @@ public class RangeTest {
     public void testEqualsConsistency() {
         assertFalse(exampleRange1.equals(null));
     }
+    
+    @Test
+    public void testEqualsNegative() {
+    	Range exampleRange5 = new Range(1, -1);
+        assertFalse(exampleRange1.equals(exampleRange5));
+    }
 
     @After
     public void tearDown() throws Exception {
