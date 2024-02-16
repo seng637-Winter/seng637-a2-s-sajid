@@ -29,7 +29,7 @@ public class RangeTest {
         assertFalse(r1.equals(r2));
     }
 
-    // Test case covering reflexive comparison where r1 == r1
+    // Test case covering reflexive comparison where r == r
     @Test
     public void testEqualsReflexive() {
     	Range r = new Range(-10, 10);
