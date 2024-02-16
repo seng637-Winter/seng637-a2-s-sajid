@@ -6,7 +6,7 @@ import org.jfree.data.DataUtilities;
 import org.jmock.*;
 import org.junit.*;
 
-public class DataUtilitiesTest {
+public class CreateNumberArrayTest {
 	private Mockery mockingContext;
 
 	@BeforeClass

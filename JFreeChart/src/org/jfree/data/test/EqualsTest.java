@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.jfree.data.Range;
 import org.junit.*;
 
-public class RangeTest {
+public class EqualsTest {
     
     @BeforeClass public static void setUpBeforeClass() throws Exception {
     }
