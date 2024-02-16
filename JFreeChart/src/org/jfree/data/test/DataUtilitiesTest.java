@@ -1,6 +1,8 @@
-package org.jfree.data;
+package org.jfree.data.test;
 
 import static org.junit.Assert.*;
+
+import org.jfree.data.DataUtilities;
 import org.jmock.*;
 import org.junit.*;
 
@@ -21,9 +23,7 @@ public class DataUtilitiesTest {
         final double[] values = {1.0, 2.3, 9.9};
         Number[] result = DataUtilities.createNumberArray(values);
         
-        for (int i = 0; i < result.length; i++) {
-        	assertEquals(values[i], result[i]);
-        }
+    	assertEquals(values, result);
     }
  
     @Test
