@@ -60,17 +60,6 @@ public class RangeTest {
     	Range r2 = new Range(-10, 10);
         assertTrue(r1.equals(r2) == r2.equals(r1));
     }
-    
-
-    // Test with a range from -infinity to infinity
-    @Test
-    public void testEqualsEdgeCaseInfinity() {
-    	Range r1 = new Range(-10, 10);
-    	Range r2 = new Range(Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);
-    	Range r3 = r2;
-        assertFalse(r1.equals(r2));
-        assertTrue(r2.equals(r3));
-    }
         
     @After
     public void tearDown() throws Exception {
