@@ -72,7 +72,6 @@ public class CreateNumberArrayTest {
         }
     }
     
-    
     // Test to verify that a valid integer input returns an array with the correct length.
     @Test
     public void createNumberArrayValidIntegerInputReturnsArrayLength() {
